@@ -22,4 +22,12 @@ const userSchema = new Schema({
 });
 
 // hash user password before saving//
-userSchema.
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified ("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+  next();
+});
+
+// method to see if the password is correct for the login//
