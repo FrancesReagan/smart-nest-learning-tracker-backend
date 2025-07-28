@@ -72,10 +72,18 @@ router.get("/sessions/:sessionId", async (req, res)=>{
     if(!session) {
       return res.status(404).json({ message : "session not found" });
     }
+
+    // authorization or auth check --- see if user in question owns the parent course of the session in question.//
+    if (session.course.user.toString() !== req.user._id.toString()){
+      return res.status(403).json({ message: "Access is denied-- you don't own this session's course"});
+    }
+    res.json(session);
+
   } catch (error) {
+    res.status(500).json(error);
     
   }
-})
+});
 
 // PUT --update session with authorization//
 
