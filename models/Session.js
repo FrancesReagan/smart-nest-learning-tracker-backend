@@ -12,11 +12,38 @@ const sessionSchema = new Schema ({
     required: true,
     default: Date.now 
   },
-  duration: {
-    // in minutes//
-    type: Number, 
-    required: true,
-    min: 1
+  // will add later for stretch option//
+  // duration: {
+  //   // in minutes//
+  //   type: Number, 
+  //   required: true,
+  //   min: 1
+  // },
+
+  notes: {
+    type: String,
+    trim: true,
   },
-  
-})
+
+  // will add later for stretch option//
+  // progressPercent: {
+  //   type: Number,
+  //   min:0,
+  //   max: 100,
+  //   default: 0
+  // },
+
+  topicsLearned: [{
+    type: String,
+    trim: true
+  }],
+
+  createAt: {
+    type: Date,
+    default: Date.now,
+  }
+
+});
+
+const Session = mongoose.model("Session", sessionSchema);
+export default Session;
