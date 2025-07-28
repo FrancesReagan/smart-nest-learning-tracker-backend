@@ -61,7 +61,21 @@ const sessions = await Session.find({ course: courseId });
 });
 
 // GET a single session by id//
+router.get("/sessions/:sessionId", async (req, res)=>{
 
+  try {
+    const { sessionId } = req.params;
+
+    // find the session and populate the associated course//
+    const session = await Session.findById(sessionId).populate("course");
+
+    if(!session) {
+      return res.status(404).json({ message : "session not found" });
+    }
+  } catch (error) {
+    
+  }
+})
 
 // PUT --update session with authorization//
 
