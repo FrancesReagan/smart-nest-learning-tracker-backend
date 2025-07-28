@@ -37,11 +37,25 @@ try {
 }
 
 const token = signToken(user);
-res.json({ token, user });
+res.json({ 
+  token, 
+  user: {_id: user._id, username: user.username, email: user.email }
+});
 } catch (error) {
   res.status(500).json ({ message: "Server error during login attempt" });
 }
 });
+
+// ME route -- Method: GET -- endpoint: /api/users/me - endpoint for frontend//
+router.get("/me", authMiddleware, async (req,res) => {
+try {
+  const user = await User.findById(req.user._id).select("-password");
+  res.json(user);
+} catch (error) {
+  res.status(500).json(error);
+}
+});
+
 
 export default router;
 
