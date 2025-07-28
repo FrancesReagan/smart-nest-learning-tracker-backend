@@ -36,9 +36,32 @@ router.post("/courses/:courseId/sessoins", async (req, res)=> {
     });
 
 
-// GET all sessions for a particular COURSE
+// GET all sessions for a particular COURSE//
+router.get("/courses/:courseId/sessions", async (req, res)=>{
+
+  try {
+    const { courseId } = req.params;
+    // find and then authenicate user//
+    const course = await Course.findById(courseId);
+    if(!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+// authenication check --- see if the user owns the course//
+if (course.user.toString() !== req.user._id.toString()) {
+  return res.status(403).json({ message: "Access denied "});
+}
+
+// retrieve or get all sessions for this particular course//
+const sessions = await Session.find({ course: courseId });
+  res.json(sessions);
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 // GET a single session by id//
+
 
 // PUT --update session with authorization//
 
