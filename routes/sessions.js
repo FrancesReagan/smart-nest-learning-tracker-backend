@@ -85,7 +85,7 @@ router.get("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-// PUT --update session with authorization check//
+// PUT --method: put ---endpoint to test --- /api/sessions/:id  --- update session with authorization check//
 router.put("/sessions/:sessionId", async (req, res)=>{
   try {
     const { sessionId } = req.params;
@@ -110,7 +110,7 @@ router.put("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-//? DELETE --a session by id?  --not sure about this--as putting the logic and method and function to delete sessions in courses/
+//? DELETE --method: delete ---endpoint: /api/sessions/:sessionId  -- a session by id?  --not sure about this--as putting the logic and method and function to delete sessions in courses/
 router.delete("/sessions/:sessionId", async (req, res)=>{
 
   try {
@@ -128,5 +128,6 @@ router.delete("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-// DELETE -- a course by id
+
+
 
