@@ -9,7 +9,29 @@ const router = express.Router();
 // authmiddleware for all routes//
 router.use(authMiddleware);
 
-// POST create a session - Method -POST -- endpoint: /api/courses/:coursesId/sessions
+// POST create a session - Method -POST -- endpoint: /api/courses/:coursesId/sessions//
+router.post("/courses/:courseId/sessoins", async (req, res)=> {
+
+  try {
+    const { courseId } = req.params;
+
+    // find course and then auth check if it does belong to logged in user//
+    const course = await Course.findById(courseId);
+
+    if(!course) {
+      return res.status(404).json({ message: "Course could not be found" });
+
+    if(course.user.toString() !== req.user._id.toString()) {
+
+      
+    }
+    }
+
+
+  } catch (error) {
+    
+  }
+})
 
 // GET all sessions for a particular COURSE
 
