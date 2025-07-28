@@ -26,6 +26,21 @@ router.post("/", (req, res)=> {
   }
   });
 
+  // GET ALL COURSES of a User ---Method: GET --- endpoint: /api/courses//
+ router.get("/", async(req, res)=> {
+
+ try {
+  const courses = await Course.find({ user: req.user._id })
+   .populate("user", "username")
+   .sort({ createdAt: -1});
+   res.json(courses);
+
+ } catch (error) {
+  res.status(500).json(error);
+ }
+ });
+
+
   // UPDATE a course - Method: PUT --endpoint: /api/courses/:id//
   router.put("/:id", (req, res)=> {
     try{
@@ -40,7 +55,15 @@ router.post("/", (req, res)=> {
         return res.status(403).json({ message: "Access is denied as this is not your course"});
       }
 
-    }
-  } )
+      const course = await Course.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+      ).populate("user","username");
 
-}
+      res.json(course);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+      
