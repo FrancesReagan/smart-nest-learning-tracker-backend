@@ -26,7 +26,7 @@ router.post("/", (req, res)=> {
   }
   });
 
-  // GET ALL COURSES of a User ---Method: GET --- endpoint: /api/courses//
+  // GET ALL COURSES of a User ---Method: GET --- endpoint: /api/courses //
  router.get("/", async(req, res)=> {
 
  try {
@@ -39,6 +39,28 @@ router.post("/", (req, res)=> {
   res.status(500).json(error);
  }
  });
+
+//  GET a course by its ID -- method: GET -- endpoint /api/course/:id  //
+router.get("/:id", async (req, res)=> {
+  try {
+    const course = await Course.findById(req.params.id)
+    .populate("user", "username");
+
+    if(!course) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    if(course.user._id.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: "Access denied -- not your course"});
+    }
+
+    res.json(course);
+
+  } catch (error) {
+    res.status(500).json(error);
+    
+  }
+});
 
 
   // UPDATE a course - Method: PUT --endpoint: /api/courses/:id//
