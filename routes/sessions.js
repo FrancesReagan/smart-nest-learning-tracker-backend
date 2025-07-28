@@ -85,7 +85,7 @@ router.get("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-// PUT --update session with authorization//
+// PUT --update session with authorization check//
 router.put("/sessions/:sessionId", async (req, res)=>{
   try {
     const { sessionId } = req.params;
@@ -110,8 +110,23 @@ router.put("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-
 //? DELETE --a session by id?  --not sure about this--as putting the logic and method and function to delete sessions in courses/
+router.delete("/sessions/:sessionId", async (req, res)=>{
+
+  try {
+    const { sessionId } = req.params;
+    // find the session and populate the course//
+    const session = await Session.findById(sessionId).populate("course");
+    if(!session) {
+      return res.status(404).json({ messaege: "Session not found in the course" });
+    }
+     await Session.findByIdAndDelete(sessionId);
+     res.json({ messaege: "Session deleted successfully" });
+
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 // DELETE -- a course by id
 
