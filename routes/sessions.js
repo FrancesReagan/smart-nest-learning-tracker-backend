@@ -86,6 +86,30 @@ router.get("/sessions/:sessionId", async (req, res)=>{
 });
 
 // PUT --update session with authorization//
+router.put("/sessions/:sessionId", async (req, res)=>{
+  try {
+    const { sessionId } = req.params;
+
+    // find the session and populate the course //
+    const session = await Session.findById(sessionId).populate("course");
+    if (!session) {
+      return res.status(404).json({ message: "Session is not found...."});
+    }
+    
+    // authorization check -- see if user owns the parent course of this session//
+    if(session.course.user.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: "Sorry you don't have the rights to access..."})
+    }
+
+    // to update the session//
+    const updatedSession = await Session.findByIdAndUpdate(sessionId, req.body, { new: true });
+    res.json( updatedSession );
+  } catch (error) {
+    res.status(500).json(error);
+    
+  }
+});
+
 
 //? DELETE --a session by id?  --not sure about this--as putting the logic and method and function to delete sessions in courses/
 
