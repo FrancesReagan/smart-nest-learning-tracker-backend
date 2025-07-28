@@ -36,3 +36,6 @@ const courseSchema = new Schema({
     required: true,
   }
 });
+
+const Course = mongoose.model("Course", courseSchema);
+export default Course;
