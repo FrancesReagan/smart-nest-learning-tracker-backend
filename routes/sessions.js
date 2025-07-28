@@ -20,18 +20,21 @@ router.post("/courses/:courseId/sessoins", async (req, res)=> {
 
     if(!course) {
       return res.status(404).json({ message: "Course could not be found" });
-
+    }
     if(course.user.toString() !== req.user._id.toString()) {
-
-      
+     return res.status(403).json({ message : "Access Denied---you can not access this..." });
     }
+    //  to create a session//
+    const session = await Session.create({
+      ...req.body,
+      course: courseId,
+    });
+    res.status(201).json(session);
+    } catch (error) {
+      res.status(400).json(error);
     }
+    });
 
-
-  } catch (error) {
-    
-  }
-})
 
 // GET all sessions for a particular COURSE
 
