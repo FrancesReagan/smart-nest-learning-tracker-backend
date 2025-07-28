@@ -26,6 +26,21 @@ router.post("/", (req, res)=> {
   }
   });
 
-  
+  // UPDATE a course - Method: PUT --endpoint: /api/courses/:id//
+  router.put("/:id", (req, res)=> {
+    try{
+
+      const courseToUpdate = await Course.findById(req.params);
+
+      if(!courseToUpdate) {
+        return res.status(404).json({message: "Course note found"});
+      }
+
+      if (courseToUpdate.user.toString() !== req.user._id.toString()) {
+        return res.status(403).json({ message: "Access is denied as this is not your course"});
+      }
+
+    }
+  } )
 
 }
