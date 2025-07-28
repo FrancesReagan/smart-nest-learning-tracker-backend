@@ -12,12 +12,19 @@ export function authMiddleware(req, res, next) {
     token = token.split(" ").pop().trim();
   }
 
+  if(!token) {
+    return res.status(401).json({ message: "Silly one--You must be logged in to do that. "});
+  }
 
+  try {
+    const { data } = jwt.verify(token, secret, { maxAge: expiration });
+    req.user = data;
+  } catch {
+    console.log("Invalid token");
+    return res.status(401).json({ message: "Invalid token sillyhead."});
+  }
 
+  next()
 
-
-
-
-
-  
 }
+
