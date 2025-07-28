@@ -11,7 +11,7 @@ router.use(authMiddleware);
 
 // routes//
 // CREATE a course --Method: POST --endpoint: /api/courses //
-router.post("/", (req, res)=> {
+router.post("/", async (req, res)=> {
   try {
     const course = await Course.create({
       ...req.body,
@@ -26,6 +26,7 @@ router.post("/", (req, res)=> {
   }
   });
 
+  // note---look at this one below--as not sure its correct method for results I want//
   // GET ALL COURSES of a User ---Method: GET --- endpoint: /api/courses //
  router.get("/", async(req, res)=> {
 
@@ -64,7 +65,7 @@ router.get("/:id", async (req, res)=> {
 
 
   // UPDATE a course - Method: PUT --endpoint: /api/courses/:id//
-  router.put("/:id", (req, res)=> {
+  router.put("/:id", async (req, res)=> {
     try{
 
       const courseToUpdate = await Course.findById(req.params);
@@ -89,3 +90,8 @@ router.get("/:id", async (req, res)=> {
     }
   });
       
+
+  // DELETE - Method: Delete --endpoint to test /api/courses/:id //
+  router.delete("/:id", async (req, res)=> {
+
+  })
