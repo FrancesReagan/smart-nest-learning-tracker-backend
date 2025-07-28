@@ -1,4 +1,5 @@
 // routes/courses.js//
+// think I may be wanting to add more res.json (200, 201, 203) messages//
 import express from "express";
 import Course from "../models/Course.js";
 import Session from "../models/Sesion.js";
@@ -93,5 +94,28 @@ router.get("/:id", async (req, res)=> {
 
   // DELETE - Method: Delete --endpoint to test /api/courses/:id //
   router.delete("/:id", async (req, res)=> {
+    try {
+      
+      const courseToDelete = await Course.findById(req.params.id);
 
-  })
+      if(!courseToDelete) {
+        return res.status(404).json({ message:"Course not found...can not delete unknown course"});
+      }
+
+      if (courseToDelete.user.toString() !== req.user._id.toString()) {
+        return res.status(403).json({ message : "Access denied -- you can not delete course that is not yours."});
+      }
+
+      // delete all sessions for this particular course//
+      await Session.deleteMany({ course: req.params.id });
+
+      // Delete the course//
+      await Course.findByIdAndDelete(req.params.id);
+
+      res.json({ message: "Success...course and all its sessions have been deleted." });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
+
+  export default router;
