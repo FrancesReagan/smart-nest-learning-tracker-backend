@@ -9,6 +9,8 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
 
 try {
+  // debug log//
+  console.log("registration attempt with data: ", req.body);
   const user = await User.create(req.body);
   const token = signToken(user);
   res.status(201).json({
@@ -16,7 +18,9 @@ try {
     user: { _id: user._id, username: user.username, email: user.email } 
   });
 } catch (error) {
-  res.status(400).json(error);
+  // debug log//
+  console.log("Registration error:", error);
+  res.status(400).json({ message: "Registration failed", error: error.message});
 }
 });
 
