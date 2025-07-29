@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const sessionSchema = new Schema ({
 
@@ -38,7 +38,7 @@ const sessionSchema = new Schema ({
     trim: true
   }],
 
-  createAt: {
+  createdAt: {
     type: Date,
     default: Date.now,
   }

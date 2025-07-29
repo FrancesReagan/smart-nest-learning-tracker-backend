@@ -10,7 +10,7 @@ const router = express.Router();
 router.use(authMiddleware);
 
 // POST create a session - Method -POST -- endpoint: /api/courses/:coursesId/sessions//
-router.post("/courses/:courseId/sessoins", async (req, res)=> {
+router.post("/courses/:courseId/sessions", async (req, res)=> {
 
   try {
     const { courseId } = req.params;

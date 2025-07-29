@@ -2,7 +2,7 @@
 // think I may be wanting to add more res.json (200, 201, 203) messages//
 import express from "express";
 import Course from "../models/Course.js";
-import Session from "../models/Sesion.js";
+import Session from "../models/Session.js";
 import { authMiddleware } from "../utils/auth.js";
 
 const router = express.Router();
@@ -69,7 +69,7 @@ router.get("/:id", async (req, res)=> {
   router.put("/:id", async (req, res)=> {
     try{
 
-      const courseToUpdate = await Course.findById(req.params);
+      const courseToUpdate = await Course.findById(req.params.id);
 
       if(!courseToUpdate) {
         return res.status(404).json({message: "Course note found"});
