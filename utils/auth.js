@@ -3,7 +3,7 @@ dotenv.config();
 
 // JWT authentication functions//
 import jwt from "jsonwebtoken";
-/courses/:courseId/sessions/:sessionId
+
 
 const secret = process.env.JWT_SECRET;
 // making it expire in 3 weeks time for ease of Live Demo, etc will change back to 24h//
