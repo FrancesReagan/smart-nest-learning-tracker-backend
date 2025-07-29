@@ -1,3 +1,4 @@
+
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -12,14 +13,9 @@ import db from "./config/connection.js";
 // load env variables from .env//
 dotenv.config();
 
-
-
-
 // create an express app//
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-
 
 
 // middleware---

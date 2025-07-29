@@ -60,8 +60,9 @@ const sessions = await Session.find({ course: courseId });
   }
 });
 
-// GET a single session by id//
-router.get("/sessions/:sessionId", async (req, res)=>{
+// GET a single session by id----//
+// chose this endpoint as it shows the nested nature of sessions to courses---more RESTful//
+router.get("/courses/:courseId/sessions/:sessionId", async (req, res)=>{
 
   try {
     const { sessionId } = req.params;
@@ -85,8 +86,9 @@ router.get("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-// PUT --method: put ---endpoint to test --- /api/sessions/:id  --- update session with authorization check//
-router.put("/sessions/:sessionId", async (req, res)=>{
+// PUT --method: put ---endpoint to test --- /api//courses/:courseId/sessions/:sessionId  --- 
+// update session with authorization check//
+router.put("/courses/:courseId/sessions/:sessionId", async (req, res)=>{
   try {
     const { sessionId } = req.params;
 
@@ -110,8 +112,9 @@ router.put("/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-//? DELETE --method: delete ---endpoint: /api/sessions/:sessionId  -- a session by id?  --not sure about this--as putting the logic and method and function to delete sessions in courses/
-router.delete("/sessions/:sessionId", async (req, res)=>{
+//? DELETE --method: delete ---endpoint: /api//courses/:courseId/sessions/:sessionId  -- a session by id?  -
+// -not sure about this--as putting the logic and method and function to delete sessions in courses//
+router.delete("/courses/:courseId/sessions/:sessionId", async (req, res)=>{
 
   try {
     const { sessionId } = req.params;
