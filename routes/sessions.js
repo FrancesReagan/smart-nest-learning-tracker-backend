@@ -2,7 +2,7 @@
 import express from "express";
 import Session from "../models/Session.js";
 import Course from "../models/Course.js";
-import { authMiddleware } from "../utils/auth"; 
+import { authMiddleware } from "../utils/auth.js"; 
 
 const router = express.Router();
 
