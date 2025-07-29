@@ -3,10 +3,7 @@ dotenv.config();
 
 // JWT authentication functions//
 import jwt from "jsonwebtoken";
-
-// debugging lines---to see if JWT_SECRET is loading//
-console.log('JWT_SECRET loaded:', process.env.JWT_SECRET ? 'YES' : 'NO');
-console.log('JWT_SECRET value:', process.env.JWT_SECRET);
+/courses/:courseId/sessions/:sessionId
 
 const secret = process.env.JWT_SECRET;
 // making it expire in 3 weeks time for ease of Live Demo, etc will change back to 24h//

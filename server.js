@@ -34,7 +34,7 @@ app.use("/api", sessionsRouter);
 
 
 
-// // event based --database collection handler-//
+// // event based--on mount --on open --database collection handler-//
 db.once("open", () => {
   console.log("Connected to MongoDB");
 app.listen(PORT, ()=> {
