@@ -86,7 +86,7 @@ router.get("/courses/:courseId/sessions/:sessionId", async (req, res)=>{
   }
 });
 
-// PUT --method: put ---endpoint to test --- /api//courses/:courseId/sessions/:sessionId  --- 
+// PUT --method: put ---endpoint --- /api//courses/:courseId/sessions/:sessionId  --- 
 // update session with authorization check//
 router.put("/courses/:courseId/sessions/:sessionId", async (req, res)=>{
   try {
