@@ -28,17 +28,28 @@ if(process.env.NODE_ENV === "production") {
 }
 
 
-
 // middleware---//
-app.use(cors({
-  origin: [
+const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:3000",
-     process.env.FRONTEND_URL
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+    // This is the variable that must be set on your Render backend service
+    process.env.FRONTEND_URL
+].filter(Boolean); // Filters out any undefined or empty strings
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not ' +
+                      'allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true); 
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 
