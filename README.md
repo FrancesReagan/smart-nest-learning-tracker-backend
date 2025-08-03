@@ -333,11 +333,17 @@ Authorization: Bearer jwt_token_here
 Content-Type: application/json
 
 {
+
   "title": "Node.js Backend Development",
+  
   "description": "Build REST APIs with Node.js",
+  
   "category": "Programming",
+  
   "url": "https://example.com/nodejs-course",
+  
   "status": "On the horizon"
+  
 }
 
 Response: 201 Created
@@ -682,7 +688,22 @@ _Production Environment Variables_
 
    _API_
       _Live API Base URL_
-        https://smart-nest-learning-tracker-backend.onrender.com/api
+        `https://smart-nest-learning-tracker-backend.onrender.com/api`
+
+     _Authentication Required_
+       - Authentication header:  Authorization: Bearer your_jwt_token_here
+          - All endpoints require this except the /users/register and /users/login  as registration creates the token for the user to be used for all other endpoints.
+          - Test all Endpoints manually with Postman (as seen above)
+
+    ---------------------------------------------------------------------------------------------
+
+    _Contribute_
+         _PUll request_
+           - fork the repo
+           - create feature branch - ` git checkout -b feature/awesome-feature
+                                     `git checkout -b fix/bug fix`
+        
+       
    
    
 
