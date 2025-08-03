@@ -65,22 +65,46 @@ _Database Design_
 -----------------------------------------------------------------------------------------------------
 
 __Tech Stack__
+
+
  _Core Tech_
+ 
   -Node.js - JavaScript runtime environment.
+  
   -Express.js - Web application framework
+  
   -MongoDb - NoSQL database wiht Mongoose
+  
   -ES6 Modules - Modern JavaScript module system.
 
+
 _Authentication Security_
+
+
  -JWT (jsonwebtoken) - token-based authentication
+ 
  -bcrypt - password hashing and verification.
+ 
  -CORS - cross-origin resource sharing.
 
+
 _Development Tools_
+
+
  -Morgan - HTTP request logging.
+ 
  -dotenv - environment variable management
+ 
  -Nodemon - development server with auto-restart 
 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+__Project Structure__
+
+<img width="180" height="697" alt="image" src="https://github.com/user-attachments/assets/be77b4b8-436d-4d0c-ab28-0b4cdfe1c8aa" />
+
+<img width="411" height="257" alt="image" src="https://github.com/user-attachments/assets/ad5a8c52-1b78-487d-9c85-1179ab20be49" />
 
 
 
