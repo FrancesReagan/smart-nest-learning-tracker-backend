@@ -369,7 +369,129 @@ Response: 201 Created
 
  ------------------------------------------------------------------------------------
 
+_Get Single Course_
+GET /api/courses/:id
+
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+{
+
+  "_id": "course_id",
+  
+  "title": "React Fundamentals",
+  
+  "description": "Learn React basics",
+  
+  "category": "Programming",
+  
+  "status": "Working it",
+  
+  "user": {
+  
+    "_id": "user_id",
+    
+    "username": "john_doe"
+  }
+}
+
+
+----------------------------------------------------------------------------------------------------
+
+_Update Course_
+
+PUT /api/courses/:id
+
+Authorization: Bearer jwt_token_here
+Content-Type: application/json
+
+
+{
+
+  "title": "Advanced React Patterns",
+  
+  "status": "BAM did it"
+  
+}
+
+Response: 200 OK
+
+{
+
+  "_id": "course_id",
+  
+  "title": "Advanced React Patterns",
+  
+  "description": "Learn React basics",
+  
+  "category": "Programming",
+  
+  "status": "BAM did it",
+  
+  "user": {
+  
+    "_id": "user_id",
+    
+    "username": "john_doe"
+    
+  }
+}
+
+ ---------------------------------------------
+Delete Course 
+
+DELETE /api/courses/:id
+
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+{
+
+  "message": "Success...course and all its sessions have been deleted."
+  
+}
  
+
+
+
+-----------------------------------------------------
+
+_Session Endpoints (protected)
+
+Get all sessions for a course
+
+GET /api/courses/:courseId/sessions
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+[
+  {
+  
+    "_id": "session_id",
+    
+    "course": "course_id",
+    
+    "date": "2025-01-01T00:00:00.000Z",
+    
+    "notes": "Learned about React hooks",
+    
+    "topicsLearned": ["useState", "useEffect", "custom hooks"],
+    
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  }
+]
+
+
+-----------------------------------------------------------------------------------------
+
+_Create New Session_
+
+
+
+
 
 System Architecture WIREFRAME
 <img width="3840" height="1677" alt="Wireframe SmartNest Learning Tracker 7-29-25 _ Mermaid Chart-2025-07-29-041555" src="https://github.com/user-attachments/assets/78fc1af0-cd1d-4ac2-8e92-8b05d3598b24" />
