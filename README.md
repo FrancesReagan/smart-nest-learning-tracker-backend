@@ -202,7 +202,9 @@ _Session Schema_
 __API Endpoints__
 
  _Authentication Endpoints_
+ 
   _Register Uer_
+  
      POST /api/users/register
 Content-Type: application/json
 
@@ -235,7 +237,7 @@ Response: 201 Created
 }
 
 ----------------------------------
-Login User
+_Login User_
 
 POST /api/users/login
 Content-Type: application/json
@@ -266,6 +268,106 @@ Response: 200 OK
 }
 
 ----------------------------------------------------------
+
+_Get Current User_
+
+GET /api/users/me
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+{
+
+  "_id": "user_id",
+  
+  "username": "spaceykittene",
+  
+  "email": "spacey@cat.com"
+  
+}
+
+-------------------------------------------------------
+
+Course Endpoints (Protected)
+
+Get All User Courses
+GET /api/courses
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+[
+  {
+     "_id": "course_id",
+     
+    "title": "React Fundamentals",
+    
+    "description": "Learn React basics",
+    
+    "category": "Programming",
+    
+    "url": "https://example.com/course",
+    
+    "status": "Working it",
+    
+    "user": {
+    
+      "_id": "user_id",
+      
+      "username": "spacekitten"
+      
+    },
+    
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  }
+]
+
+--------------------------------------------------------------------
+
+_Create New Course_
+
+POST /api/courses
+Authorization: Bearer jwt_token_here
+Content-Type: application/json
+
+{
+  "title": "Node.js Backend Development",
+  "description": "Build REST APIs with Node.js",
+  "category": "Programming",
+  "url": "https://example.com/nodejs-course",
+  "status": "On the horizon"
+}
+
+Response: 201 Created
+
+{
+
+  "_id": "course_id",
+  
+  "title": "Node.js Backend Development",
+  
+  "description": "Build REST APIs with Node.js",
+  
+  "category": "Programming",
+  
+  "url": "https://example.com/nodejs-course",
+  
+  "status": "On the horizon",
+  
+  "user": {
+  
+    "_id": "user_id",
+    
+    "username": "spacekitten"
+    
+  },
+  
+  "createdAt": "2025-01-01T00:00:00.000Z"
+  
+}
+
+
+ ------------------------------------------------------------------------------------
 
  
 
