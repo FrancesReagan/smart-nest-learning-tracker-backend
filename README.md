@@ -207,7 +207,7 @@ __API Endpoints__
   _Register Uer_
   
      POST /api/users/register
-Content-Type: application/json
+     Content-Type: application/json
 
 {
 
@@ -245,9 +245,9 @@ Content-Type: application/json
 
 {
 
-  "email": "john@example.com",
+  "email": "spacey@cat.com",
   
-  "password": "secure123"
+  "password": "abc1234"
   
 }
 
@@ -393,7 +393,7 @@ Response: 200 OK
   
     "_id": "user_id",
     
-    "username": "john_doe"
+    "username": "spacekitten"
   }
 }
 
@@ -434,7 +434,7 @@ Response: 200 OK
   
     "_id": "user_id",
     
-    "username": "john_doe"
+    "username": "spacekitten"
     
   }
 }
@@ -496,9 +496,9 @@ Content-Type: application/json
 
 {
 
-  "notes": "Today I learned about MongoDB aggregation",
+  "notes": "Today I learned about how to make custom hooks",
   
-  "topicsLearned": ["aggregation pipeline", "match stage", "group stage"]
+  "topicsLearned": ["custom hooks", "react"]
   
 }
 
@@ -514,9 +514,9 @@ Response: 201 Created
   
   "date": "2025-01-01T00:00:00.000Z",
   
-  "notes": "Today I learned about MongoDB aggregation",
+  "notes": "Today I learned about how to make custom hooks",
   
-  "topicsLearned": ["aggregation pipeline", "match stage", "group stage"],
+  "topicsLearned": ["custom hooks", "react"],
   
   "createdAt": "2025-01-01T00:00:00.000Z"
   
@@ -540,7 +540,7 @@ Response: 200 OK
   
     "_id": "course_id",
     
-    "title": "MongoDB Fundamentals",
+    "title": "React Fundamentals",
     
     "user": "user_id"
     
@@ -548,9 +548,9 @@ Response: 200 OK
   
   "date": "2025-01-01T00:00:00.000Z",
   
-  "notes": "Learned about aggregation",
+  "notes": "leared about custom hooks",
   
-  "topicsLearned": ["pipeline", "stages"]
+  "topicsLearned": ["hooks", "custom hooks"]
   
 }
 
@@ -565,9 +565,9 @@ Content-Type: application/json
 
 {
 
-  "notes": "Updated notes about MongoDB aggregation and indexes",
+  "notes": "Updated notes about React custom hooks",
   
-  "topicsLearned": ["aggregation pipeline", "compound indexes", "text search"]
+  "topicsLearned": ["custom hooks in React", "hooks", "best practices with custom hooks"]
 }
 
 
@@ -582,9 +582,9 @@ Response: 200 OK
  
   "date": "2025-01-01T00:00:00.000Z",
   
-  "notes": "Updated notes about MongoDB aggregation and indexes",
+  "notes": "Updated notes about React custom hooks",
   
-  "topicsLearned": ["aggregation pipeline", "compound indexes", "text search"],
+  "topicsLearned": ["custom hooks in React", "hooks", "best practices with custom hooks"],
   
   "createdAt": "2025-01-01T00:00:00.000Z"
   
