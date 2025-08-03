@@ -3,6 +3,7 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 
  _This backend API is a Node.js/Express backend API for the SmartNest Learning Tracker application. It provides secure user authentication, course management, and learning session tracking wiht MongoDB integration._
 
+[SmartNest-Learning-tracker-backen]( https://smart-nest-learning-tracker-backend.onrender.com/api)
 
  __Features__
 
@@ -647,6 +648,45 @@ _Render.com Deployment_
                                         NODE_ENV=production
       
                                         PORT=3000`
+----------------------------------------------------------------
+//CORS//
+
+---------------------------------------------------------
+
+__Frontend Connection Setup__
+
+_Environment Variables for the Frontend_
+
+   -frontend should use these environment variables - 
+     - Local Dev in .env file- `VITE_API_URL=http://localhost:3000`
+     - Production in .env.production - `VITE_API_URL="https:https://smart-nest-learning-tracker-backend.onrender.com`
+
+_Production Environment Variables_
+
+   _Required environment variables_
+   
+      - Database Connection  - `MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/smartnest?retryWrites=true&w=majority&appName=Cluster0`
+      - JWT Configuration - `JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters-long`
+      - Server Configuration - `PORT=3000
+                                NODE_ENV=production`
+
+   _Security_
+
+      -JWT secret - use a random generated secret -32 or -64 characters in length.
+      - MongoDB - use MongoDB Atlas with strong passwords
+      - Environment Variables - never comit `.env` files to version control
+      - CORS - can restrict the origins as you see fit.
+
+ -------------------------------------------------------------------------------------------------------------
+
+   _API_
+      _Live API Base URL_
+        https://smart-nest-learning-tracker-backend.onrender.com/api
+   
+   
+
+
+
 
 
    
