@@ -489,6 +489,124 @@ Response: 200 OK
 
 _Create New Session_
 
+POST /api/courses/:courseId/sessions
+Authorization: Bearer jwt_token_here
+Content-Type: application/json
+
+{
+
+  "notes": "Today I learned about MongoDB aggregation",
+  
+  "topicsLearned": ["aggregation pipeline", "match stage", "group stage"]
+  
+}
+
+
+Response: 201 Created
+
+
+{
+
+  "_id": "session_id",
+  
+  "course": "course_id",
+  
+  "date": "2025-01-01T00:00:00.000Z",
+  
+  "notes": "Today I learned about MongoDB aggregation",
+  
+  "topicsLearned": ["aggregation pipeline", "match stage", "group stage"],
+  
+  "createdAt": "2025-01-01T00:00:00.000Z"
+  
+}
+
+
+----------------------------------------------------------------------------------------------
+
+_Get a single session_
+
+GET /api/courses/:courseId/sessions/:sessionId
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+{
+
+  "_id": "session_id",
+  
+  "course": {
+  
+    "_id": "course_id",
+    
+    "title": "MongoDB Fundamentals",
+    
+    "user": "user_id"
+    
+  },
+  
+  "date": "2025-01-01T00:00:00.000Z",
+  
+  "notes": "Learned about aggregation",
+  
+  "topicsLearned": ["pipeline", "stages"]
+  
+}
+
+---------------------------------------------------------------------------------
+
+_Update Session_
+
+PUT /api/courses/:courseId/sessions/:sessionId
+Authorization: Bearer jwt_token_here
+Content-Type: application/json
+
+
+{
+
+  "notes": "Updated notes about MongoDB aggregation and indexes",
+  
+  "topicsLearned": ["aggregation pipeline", "compound indexes", "text search"]
+}
+
+
+Response: 200 OK
+
+{
+
+  "_id": "session_id",
+  
+  "course": "course_id",
+
+ 
+  "date": "2025-01-01T00:00:00.000Z",
+  
+  "notes": "Updated notes about MongoDB aggregation and indexes",
+  
+  "topicsLearned": ["aggregation pipeline", "compound indexes", "text search"],
+  
+  "createdAt": "2025-01-01T00:00:00.000Z"
+  
+}
+
+
+-------------------------------------------------------------------------------------------
+
+_Delete Session_
+DELETE /api/courses/:courseId/sessions/:sessionId
+
+Authorization: Bearer jwt_token_here
+
+Response: 200 OK
+
+{
+
+  "message": "Session deleted successfully"
+  
+}
+
+--------------------------------------------------------------------------------------------
+
 
 
 
