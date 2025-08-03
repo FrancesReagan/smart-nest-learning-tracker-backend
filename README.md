@@ -103,7 +103,8 @@ _Development Tools_
 
 __Project Structure__
 
-<img width="180" height="697" alt="image" src="https://github.com/user-attachments/assets/be77b4b8-436d-4d0c-ab28-0b4cdfe1c8aa" />
+<img width="193" height="539" alt="image" src="https://github.com/user-attachments/assets/475bcbdc-21ca-4dd7-87ce-23c2344ce796" />
+
 
 <img width="411" height="257" alt="image" src="https://github.com/user-attachments/assets/ad5a8c52-1b78-487d-9c85-1179ab20be49" />
 
