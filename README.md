@@ -3,7 +3,7 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 
  _This backend API is a Node.js/Express backend API for the SmartNest Learning Tracker application. It provides secure user authentication, course management, and learning session tracking wiht MongoDB integration._
 
-[SmartNest-Learning-tracker-backen]( https://smart-nest-learning-tracker-backend.onrender.com/api)
+[SmartNest-Learning-tracker-backend]( https://smart-nest-learning-tracker-backend.onrender.com/api)
 
  __Features__
 
