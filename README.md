@@ -107,6 +107,31 @@ __Project Structure__
 <img width="411" height="257" alt="image" src="https://github.com/user-attachments/assets/ad5a8c52-1b78-487d-9c85-1179ab20be49" />
 
 
+--------------------------------------------------------
+
+_Creating this project_
+
+  need: *Node.js, *npm, *MongoDB Atlas account 
+
+  installation: 
+     - Clone repo: `git clone https://github.com/FrancesReagan/smart-nest-learning-tracker-backend`
+                   `cd smart-nest-learning-tracker-backend`
+
+     -Install dependencies - `npm install`
+
+     -set up environment variables - create `.env` file in root directory: 
+     
+                           `MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/smartnest?retryWrites=true&w=majority&appName=Cluster0
+                           JWT_SECRET=your-super-secret-jwt-key-here
+                           PORT=3000
+                           NODE_ENV=development`
+
+    -start the development server: `npm run dev`
+
+    -verify the server is running  - sever will start on http://localhost:3000
+                                   - MongoDB connection will be logged to console.
+
+
 
  
 
