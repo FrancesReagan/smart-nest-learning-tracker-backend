@@ -132,6 +132,35 @@ _Creating this project_
                                    - MongoDB connection will be logged to console.
 
 
+ -----------------------------------------------------------------------------------------------------------------------
+
+ __Database Schema__
+
+
+  _User Schema_
+
+  {
+  _id: ObjectId,
+  username: String (required, unique, trimmed),
+  email: String (required, unique, validated),
+  password: String (required, hashed, min 5 chars),
+  createdAt: Date (auto-generated)
+}
+  
+
+_Course Schema_
+
+ {
+  _id: ObjectId,
+  title: String (required, trimmed),
+  description: String (required, trimmed),
+  category: String (enum: Programming, Design, Business, Data Science, Investing, Other),
+  url: String (optional, trimmed),
+  status: String (enum: "On the horizon", "Working it", "BAM did it"),
+  user: ObjectId (ref: User, required),
+  createdAt: Date (auto-generated)
+ }
+
 
  
 
