@@ -9,57 +9,57 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 
  _Authentication & Security_
  
-  *JWT Authentication - secure token-based authentication with expiration.
+     * JWT Authentication - secure token-based authentication with expiration.
   
-  *Password hashing - bcrypt encryption with 10 salt rounds.
+     * Password hashing - bcrypt encryption with 10 salt rounds.
   
-  *Protected Routes - middleware based route protection.
+     * Protected Routes - middleware based route protection.
   
-  *User Authorization - users can only access their own data.
+     * User Authorization - users can only access their own data.
   
-  *CORS support - cross-origin resource sharing for frontend integration.
+     * CORS support - cross-origin resource sharing for frontend integration.
 
 
 
  _Course Management_
 
 
-   *Full C.R.U.D. operations - create, read,update, delete courses.
+   * Full C.R.U.D. operations - create, read,update, delete courses.
    
-   *Course Categories - Programming, Design, Business, Data Science, Investing, Other
+   * Course Categories - Programming, Design, Business, Data Science, Investing, Other
    
-   *Status Tracking - "On the horizon", "Working it", "BAM did it"
+   * Status Tracking - "On the horizon", "Working it", "BAM did it"
    
-   *User Ownership - each course belongs to a specific user.
+   * User Ownership - each course belongs to a specific user.
    
-   *URL storage - optional course links for external resources.
+   * URL storage - optional course links for external resources.
    
 
 
 _Session Tracking_
 
 
-   *Learning Sessions - track study sessions for each course.
+   * Learning Sessions - track study sessions for each course.
    
-   *Session Notes - detailed notes for each learning session.
+   * Session Notes - detailed notes for each learning session.
    
-   *Topics Learned - array of topics covered in each session.
+   * Topics Learned - array of topics covered in each session.
    
-   *Date Tracking- automatic timestamp for session creation.
+   * Date Tracking- automatic timestamp for session creation.
    
-  *Nested Resources - sessions belong to courses wiht proper authorization.
+  * Nested Resources - sessions belong to courses wiht proper authorization.
 
 
 
 _Database Design_
 
-   *MongoDB Integration - Mongoose Object Document Model for data modeling.
+   * MongoDB Integration - Mongoose Object Document Model for data modeling.
    
-   *Schema Validation - built-in validation for all data fields.
+   * Schema Validation - built-in validation for all data fields.
    
-   *Relationships - proper use-course and course-session relationships.
+   * Relationships - proper use-course and course-session relationships.
    
-   *Indexes - optimized queries with user-based filtering.
+   * Indexes - optimized queries with user-based filtering.
 
 
 
