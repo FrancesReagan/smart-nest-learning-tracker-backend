@@ -62,6 +62,27 @@ _Database Design_
    * Indexes - optimized queries with user-based filtering.
 
 
+-----------------------------------------------------------------------------------------------------
+
+__Tech Stack__
+ _Core Tech_
+  -Node.js - JavaScript runtime environment.
+  -Express.js - Web application framework
+  -MongoDb - NoSQL database wiht Mongoose
+  -ES6 Modules - Modern JavaScript module system.
+
+_Authentication Security_
+ -JWT (jsonwebtoken) - token-based authentication
+ -bcrypt - password hashing and verification.
+ -CORS - cross-origin resource sharing.
+
+_Development Tools_
+ -Morgan - HTTP request logging.
+ -dotenv - environment variable management
+ -Nodemon - development server with auto-restart 
+
+
+
 
  
 
