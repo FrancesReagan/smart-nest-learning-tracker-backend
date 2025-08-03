@@ -607,7 +607,49 @@ Response: 200 OK
 
 --------------------------------------------------------------------------------------------
 
+___Deployment & Production__
 
+ _Architecture_
+
+
+  - Backend: Deployed on Render.com
+    
+  - Frontend: deployed on Netlify.com
+    
+  - Database: MongoDB Atlas
+    
+  - Live API: https://smart-nest-learning-tracker-backend.onrender.com
+
+
+
+_Render.com Deployment_
+
+ * Prepare Repository
+   
+    - ensure all code is pushed to GitHub
+      
+    - verify production-ready configuration
+      
+    - check environment variables are properly set.
+
+
+
+ * Deploy to Render
+   
+    - signup/login to Render.com
+    - 
+    - create web service: connect to your GitHub repo, choose "web service" type, set build command - `npm install`, set start command - ` npm start`, choose node.js environment.
+
+    - Configure environment variables: `MONGO_URI=your-mongodb-atlas-connection-string
+    - 
+                                        JWT_SECRET=your-super-secret-jwt-key
+      
+                                        NODE_ENV=production
+      
+                                        PORT=3000`
+
+
+   
 
 
 
