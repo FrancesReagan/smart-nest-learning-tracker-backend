@@ -699,12 +699,22 @@ _Production Environment Variables_
 
     _Contribute_
          _PUll request_
+         
            - fork the repo
+           
            - create feature branch - ` git checkout -b feature/awesome-feature
-                                     `git checkout -b fix/bug fix`
+           
+                                      `git checkout -b fix/bug fix`
+                                      
+           - commit changes `git commit -m "add new feature"
+           
+           - push to branch - `git push origin feature/new-feature
+           
+           - open a pull request
+
+   ---------------------------------------------------------------
         
-       
-   
+    Acknowledgements:  Thank you to my instructors Abrahamm Tavarez and Colton Wright for your guidance and support; thank you to my fellow 2025-RTT-23 cohort for your support.
    
 
 
