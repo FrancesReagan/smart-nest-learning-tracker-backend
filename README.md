@@ -140,27 +140,132 @@ _Creating this project_
   _User Schema_
 
   {
+  
   _id: ObjectId,
+  
   username: String (required, unique, trimmed),
+  
   email: String (required, unique, validated),
+  
   password: String (required, hashed, min 5 chars),
+  
   createdAt: Date (auto-generated)
+  
 }
   
+
 
 _Course Schema_
 
  {
+ 
   _id: ObjectId,
+  
   title: String (required, trimmed),
+  
   description: String (required, trimmed),
+  
   category: String (enum: Programming, Design, Business, Data Science, Investing, Other),
+  
   url: String (optional, trimmed),
+  
   status: String (enum: "On the horizon", "Working it", "BAM did it"),
+  
   user: ObjectId (ref: User, required),
+  
   createdAt: Date (auto-generated)
+  
  }
 
+
+_Session Schema_
+
+
+{
+
+  _id: ObjectId,
+  
+  course: ObjectId (ref: Course, required),
+  
+  date: Date (required, default: now),
+  
+  notes: String (optional, trimmed),
+  
+  topicsLearned: [String] (array of topics, trimmed),
+  
+  createdAt: Date (auto-generated)
+  
+}
+
+-------------------------------------------------------------------------------------------------------
+
+__API Endpoints__
+
+ _Authentication Endpoints_
+  _Register Uer_
+     POST /api/users/register
+Content-Type: application/json
+
+{
+
+  "username": "spacekitten",
+  
+  "email": "spacey@cat.com",
+  
+  "password": "abc1234"
+  
+}
+
+Response: 201 Created
+
+
+{
+
+  "token": "jwt_token_here",
+  
+  "user": {
+  
+    "_id": "user_id",
+    
+    "username": "spacekitten",
+    
+    "email": "spacey@cat.com"
+    
+  }
+}
+
+----------------------------------
+Login User
+
+POST /api/users/login
+Content-Type: application/json
+
+{
+
+  "email": "john@example.com",
+  
+  "password": "secure123"
+  
+}
+
+Response: 200 OK
+
+
+{
+  "token": "jwt_token_here",
+  
+  "user": {
+  
+    "_id": "user_id",
+    
+    "username": "spacekitten",
+    
+    "email": "spacey@cat.com"
+    
+  }
+}
+
+----------------------------------------------------------
 
  
 
