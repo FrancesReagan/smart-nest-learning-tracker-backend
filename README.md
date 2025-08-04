@@ -7,6 +7,12 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 
 
 --------------------------------------------------------
+__Architecture__
+
+`Frontend (Netlify) <--> Backend API (Render) <--> MongoDB (Compass/Atlas)`
+`Frontend: https://smartnesttracker.netlify.app/`
+`Backend: https://smart-nest-learning-tracker-backend.onrender.com`
+`Database: MongoDB Atlas or Compass`
 
 
 System Architecture WIREFRAME
@@ -150,7 +156,7 @@ _Creating this project_
 
  -----------------------------------------------------------------------------------------------------------------------
 
- __Database Schema__
+ __Database Schema/Models__
 
 
   _User Schema_
