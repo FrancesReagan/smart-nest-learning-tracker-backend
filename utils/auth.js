@@ -4,20 +4,28 @@ dotenv.config();
 // JWT authentication functions//
 import jwt from "jsonwebtoken";
 
-
 const secret = process.env.JWT_SECRET;
-// making it expire in 3 weeks time for ease of Live Demo, etc will change back to 24h//
-const expiration ="504h";
+// making it expire in 3 weeks time for ease of Live Demo, etc will change back to 2h or 24h//
+const expiration = "504h";
 
+// I created custom middleware that automatically validates JWT tokens and
+// attaches user data to every request. This implements the authentication layer at the Express level.//
+// Optional chaining //
+// Optional chaining (?.) is like asking Hey, does this exist?//
+//  before trying to use it. It prevents the app from crashing when trying to access properties that might not exist.//
+// it will return undefined instead of crashing//
 export function authMiddleware(req, res, next) {
+  // Optional chaining //
   let token = req.body?.token || req.query?.token || req.headers.authorization;
 
   if (req.headers.authorization) {
     token = token.split(" ").pop().trim();
   }
 
-  if(!token) {
-    return res.status(401).json({ message: "Silly one--You must be logged in to do that. "});
+  if (!token) {
+    return res
+      .status(401)
+      .json({ message: "Silly one--You must be logged in to do that. " });
   }
 
   try {
@@ -25,11 +33,10 @@ export function authMiddleware(req, res, next) {
     req.user = data;
   } catch {
     console.log("Invalid token");
-    return res.status(401).json({ message: "Invalid token sillyhead."});
+    return res.status(401).json({ message: "Invalid token sillyhead." });
   }
 
-  next()
-
+  next();
 }
 
 export function signToken({ username, email, _id }) {
