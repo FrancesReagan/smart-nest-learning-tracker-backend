@@ -1,7 +1,8 @@
 __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 *Backend*
 
- _This backend API is a Node.js/Express backend API for the SmartNest Learning Tracker application. It provides secure user authentication, course management, and learning session tracking wiht MongoDB integration._
+ _This backend API is a Node.js/Express backend API for the SmartNest Learning Tracker application. It provides secure user authentication, course management, and learning session tracking wiht MongoDB integration.
+ _Built with Node.js, Express, MongoDB and depolyed on Render.com_
 
 [SmartNest-Learning-tracker-backend]( https://smart-nest-learning-tracker-backend.onrender.com/api)
 
@@ -10,8 +11,11 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 __Architecture__
 
 `Frontend (Netlify) <--> Backend API (Render) <--> MongoDB (Compass/Atlas)`
+
 `Frontend: https://smartnesttracker.netlify.app/`
+
 `Backend: https://smart-nest-learning-tracker-backend.onrender.com`
+
 `Database: MongoDB Atlas or Compass`
 
 
@@ -736,6 +740,43 @@ _Production Environment Variables_
        
 
 -------------------------------------------
+
+__References__
+
+_core tech_
+
+[Express.js Doc](https://expressjs.com/) - web framework API reference
+
+[Mongoose Doc](https://mongoosejs.com/docs/guide.html) - MongoDB ODB schemas and queries
+
+[JWT.io](https://www.jwt.io/) - cool JSON web token encoder/decoder and docs
+
+[bcrypt](https://www.npmjs.com/package/bcrypt) - password hashing library
+
+
+
+_database & deployment_
+
+[MongoDB Atlas](https://www.mongodb.com/docs/atlas/) - cloud database setup and managment
+
+[Render.com Docs](https://render.com/docs) - backend deployment platform
+
+[REST API Design Guide] - RESTful API best practices
+
+
+
+_Dev tools_
+
+[Postman Learning Center](https://learning.postman.com/docs/introduction/overview/) - API Testing and documentation
+
+[HTTP Status Codes](https://www.webfx.com/web-development/glossary/http-status-codes/) - reference guide for response codes
+
+[CORS Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS) - Cross Origin resource sharing guid
+
+
+
+
+____________________________________________________________________________________________________
 
     Acknowledgements:  Thank you to my instructors Abrahamm Tavarez and Colton Wright for your guidance and support; thank you to my fellow 2025-RTT-23 cohort for your support.
 
