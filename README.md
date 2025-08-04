@@ -5,6 +5,18 @@ __🪺SmartNest-LEARNING-TRACKER-BACKEND API__
 
 [SmartNest-Learning-tracker-backend]( https://smart-nest-learning-tracker-backend.onrender.com/api)
 
+
+--------------------------------------------------------
+
+
+System Architecture WIREFRAME
+<img width="3840" height="1677" alt="Wireframe SmartNest Learning Tracker 7-29-25 _ Mermaid Chart-2025-07-29-041555" src="https://github.com/user-attachments/assets/78fc1af0-cd1d-4ac2-8e92-8b05d3598b24" />
+[used mermaidchart.com](https://www.mermaidchart.com/app/projects/5d210069-0590-4424-940e-f4ec9da1af6d/diagrams/2c6b60af-aaa1-4a79-a20d-37534513b643/version/v0.1/edit)
+
+
+-------------------------------------------------------------------
+
+
  __Features__
 
 
@@ -109,7 +121,9 @@ __Project Structure__
 <img width="411" height="257" alt="image" src="https://github.com/user-attachments/assets/ad5a8c52-1b78-487d-9c85-1179ab20be49" />
 
 
---------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
 
 _Creating this project_
 
@@ -447,6 +461,7 @@ Response: 200 OK
 }
 
  ---------------------------------------------
+ 
 Delete Course 
 
 DELETE /api/courses/:id
@@ -712,20 +727,9 @@ _Production Environment Variables_
            
            - open a pull request
 
-   ---------------------------------------------------------------
-        
+       
+
+-------------------------------------------
+
     Acknowledgements:  Thank you to my instructors Abrahamm Tavarez and Colton Wright for your guidance and support; thank you to my fellow 2025-RTT-23 cohort for your support.
-   
-
-
-
-
-
-   
-
-
-
-System Architecture WIREFRAME
-<img width="3840" height="1677" alt="Wireframe SmartNest Learning Tracker 7-29-25 _ Mermaid Chart-2025-07-29-041555" src="https://github.com/user-attachments/assets/78fc1af0-cd1d-4ac2-8e92-8b05d3598b24" />
-[used mermaidchart.com](https://www.mermaidchart.com/app/projects/5d210069-0590-4424-940e-f4ec9da1af6d/diagrams/2c6b60af-aaa1-4a79-a20d-37534513b643/version/v0.1/edit)
 
